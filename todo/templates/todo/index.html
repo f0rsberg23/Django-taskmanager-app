@@ -1,0 +1,18 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+    <div class="container col-5">
+        <div class="card text-center mt-5">
+            <div class="card-header text-white bg-dark">
+                WELCOME
+            </div>
+            <div class="card-body">
+                {% if user.is_authenticated %}
+                    <h1>You are already signed in as {{user}}</h1>
+                    <a href="{% url 'userpage' user.username %}" class="btn btn-primary mt-2">Go to tasks</a>
+                {% else %} 
+                    <h5 class="card-title">Please sign in</h5>
+                {% endif %}    
+            </div>
+        </div>
+    </div>
+{% endblock %} 

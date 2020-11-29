@@ -1,0 +1,44 @@
+{% extends 'todo/base.html' %}
+
+{% block title %}
+    Task Manager - Sign In
+{% endblock %}
+
+{% block content %}
+    <section id="cover" class="min-vh-100">
+        <div id="cover-caption">
+            <div class="container col-3 mt-5">
+                <div>   
+                    <div class="form-group ">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="text-white">
+                                <br>
+                                <label>Username:</label>
+                                <input type = 'text' name = 'username' class="form-control">
+                                <small class="form-text text-muted">Enter username</small>
+                            </div>
+                    </div>
+                    <div class="form-group">       
+                        <div class="text-white">
+                            <label>Password</label>
+                            <input type = 'password' name= 'password' class="form-control">
+                        </div>
+                        <div class="text-center">
+                            <br>
+                            <input type= 'submit' class="btn btn-success mb-3" value='Sign In'>
+                        </div>
+                        {% if not user %}
+                            <div class="container-fluid">
+                                <div class="alert alert-danger" role="alert" style="bottom: 5px;">
+                                    <h6 class="text-center">{{ warning }}</h6>
+                                </div>
+                            </div>
+                        {% endif %}
+                        </form>        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
