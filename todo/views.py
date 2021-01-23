@@ -32,7 +32,6 @@ class SignInView(View):
             return render(request, 'todo/signin.html', context={'user': user, 'warning':'Password is incorrect!'})
         if not user:
             return render(request, 'todo/signin.html', context={'user': user, 'warning':'Username does not exist!'})
-            # return self.get(request)
         login(request, user)
         return redirect(reverse('userpage', kwargs={'username':username}))
 
@@ -130,5 +129,3 @@ class TaskEditView(View):
             message.save()
 
         return redirect(reverse('userpage', kwargs={'username':user}))
-
-

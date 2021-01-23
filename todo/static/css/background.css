@@ -25,3 +25,7 @@ form:before {
     z-index: -1;
     border-radius: 10px;
 }
+
+body {
+    background-color: #f0f0f2;
+}
