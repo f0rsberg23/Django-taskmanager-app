@@ -5,12 +5,6 @@
 {% endblock %}
 
 {% block content %}
-    <!-- {% if user.is_authenticated %}
-    <div class="container text-center mt-5 mb-3">
-        <h3>You are authenticated as {{user}}</h3>
-    </div>
-    {% endif %} -->
-
     {% if user == user_ %}
         <div class="container mt-5 col-6">
             <div class="card text-whte bg-dark mb-3" style="max-width: 50rem;">
@@ -130,12 +124,10 @@
                 {% endif %}
                 {% if message.complete %}
                     <div class="card-footer text-muted alert alert-success" style="margin-bottom: 0px; border-bottom-width: 0px;">
-                        <!-- {{ message.author.username }} -->
                         <h3>Completed!</h3>
                     </div>
                 {% else %}
                     <div class="card-footer text-muted alert alert-danger" style="margin-bottom: 0px; border-bottom-width: 0px;">
-                        <!-- {{ message.author.username }} -->
                         <h3>Not completed!</h3>
                     </div>
                 {% endif %}
